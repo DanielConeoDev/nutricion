@@ -1,4 +1,10 @@
 <?php
+require_once __DIR__ . '/../../controllers/EmpresaController.php';
+$controller = new EmpresaController();
+$empresa = $controller->index();
+?>
+
+<?php
 include("../../public/includ/head.php");
 include("../../public/includ/nav.php");
 include("../../public/includ/aside.php");
@@ -95,35 +101,39 @@ include("../../public/includ/aside.php");
                 <tr>
                   <th>Nit</th>
                   <th>Nombre</th>
-                  <th>Estado</th>
                   <th>Telefono</th>
                   <th>Email</th>
+                  <th>Estado</th>
                   <th>Prefijo</th>
                   <th>Fecha creacion</th>
                   <th>Fecha ultima modificacion</th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody>
+              <?php while ($row = $empresa->fetch(PDO::FETCH_ASSOC)): ?>
                 <tr>
-                  <td>Tiger Nixon</td>
-                  <td>System Architect</td>
-                  <td>Edinburgh</td>
-                  <td>61</td>
-                  <td>2011-04-25</td>
+                  <td><?php echo htmlspecialchars($row['nit']); ?></td>
+                  <td><?php echo htmlspecialchars($row['nombre']); ?></td>
+                  <td><?php echo htmlspecialchars($row['telefono']); ?></td>
+                  <td><?php echo htmlspecialchars($row['email']); ?></td>
+                  <td><?php echo htmlspecialchars($row['estado']); ?></td>
+                  <td><?php echo htmlspecialchars($row['prefijo']); ?></td>
+                  <td><?php echo htmlspecialchars($row['fecha_ultima_modificacion']); ?></td>
+                  <td><?php echo htmlspecialchars($row['fecha_creacion']); ?></td>
                   <td>
                     <div class="btn-group">
-                      <!-- <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <i class="fa-solid fa-ellipsis-vertical"></i>
-                      </button> -->
-<!--                       <button type="button" class="btn btn-outline-primary">Editar</button>
-                      <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                      <ul class="dropdown-menu"> -->
+                      </button>
+                      <ul class="dropdown-menu"> 
                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pen-to-square"></i> Editar</a></li>
                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash-can"></i> Eliminar</a></li>
                       </ul>
                     </div>
                   </td>
                 </tr>
+                <?php endwhile; ?>
               </tbody>
             </table>
           </div>
