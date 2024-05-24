@@ -4,6 +4,11 @@ include("../../public/includ/nav.php");
 include("../../public/includ/aside.php");
 ?>
 <!-- Content Header (Page header) -->
+<<<<<<< HEAD
+=======
+<!-- Content Header (Page header) -->
+<!-- Content Header (Page header) -->
+>>>>>>> 1ff6204c1a2c6476ee6e329871492d998680e806
 <div class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
