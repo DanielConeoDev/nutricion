@@ -23,16 +23,18 @@ include("../../public/includ/aside.php");
     <div class="row">
       <div class="col-lg-12">
         <div class="card card-danger card-outline">
-          <div class="card-body">
-            <table id="example" class="table table-striped" style="width:100%">
+          <div class="card-body table-responsive">
+            <table id="example" class="table table-striped table-bordered table-hover table-sm " style="width:100%">
               <thead>
                 <tr>
-                  <th>Name</th>
-                  <th>Position</th>
-                  <th>Office</th>
-                  <th>Age</th>
-                  <th>Start date</th>
-                  <th>Salary</th>
+                  <th>Nit</th>
+                  <th>Nombre</th>
+                  <th>Estado</th>
+                  <th>Telefono</th>
+                  <th>Email</th>
+                  <th>Prefijo</th>
+                  <th>Fecha creacion</th>
+                  <th>Fecha ultima modificacion</th>
                 </tr>
               </thead>
               <tbody>
@@ -44,10 +46,12 @@ include("../../public/includ/aside.php");
                   <td>2011-04-25</td>
                   <td>
                     <div class="btn-group">
-                      <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <!-- <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <i class="fa-solid fa-ellipsis-vertical"></i>
-                      </button>
-                      <ul class="dropdown-menu">
+                      </button> -->
+<!--                       <button type="button" class="btn btn-outline-primary">Editar</button>
+                      <button type="button" class="btn btn-outline-danger">Eliminar</button>
+                      <ul class="dropdown-menu"> -->
                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pen-to-square"></i> Editar</a></li>
                         <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash-can"></i> Eliminar</a></li>
                       </ul>
