@@ -16,6 +16,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="https://kit.fontawesome.com/757f03e84a.js" crossorigin="anonymous"></script>
     <!-- Theme style -->
     <link rel="stylesheet" href="../../public/dist/css/adminlte.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap5.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
