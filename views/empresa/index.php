@@ -4,7 +4,6 @@ include("../../public/includ/nav.php");
 include("../../public/includ/aside.php");
 ?>
 <!-- Content Header (Page header) -->
-<!-- Content Header (Page header) -->
 <div class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
@@ -46,16 +45,11 @@ include("../../public/includ/aside.php");
                   <td>
                     <div class="btn-group">
                       <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Small button
+                      <i class="fa-solid fa-ellipsis-vertical"></i>
                       </button>
                       <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        <li>
-                          <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pen-to-square"></i> Editar</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash-can"></i> Eliminar</a></li>
                       </ul>
                     </div>
                   </td>
