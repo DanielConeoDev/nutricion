@@ -8,7 +8,7 @@ include("../../public/includ/aside.php");
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-          <button type="button" class="btn btn-primary">Registrar</button>
+          <button type="button" class="btn btn-primary">Registrar la Empresa</button>
           </div><!-- /.col -->
           <div class="col-sm-6">
             
