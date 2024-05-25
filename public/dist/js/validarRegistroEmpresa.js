@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function(){
+/*document.addEventListener('DOMContentLoaded', function(){
 
     const formulario = document.querySelector('#formulario');
     const nit = document.querySelector('#nit')
@@ -64,4 +64,4 @@ document.addEventListener('DOMContentLoaded', function(){
             telefono.classList.remove('is-invalid');
         }
     }
-});
+});*/

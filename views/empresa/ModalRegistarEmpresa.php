@@ -1,67 +1,61 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Registrar Empresa</h1>
+            <div class="modal-header bg-danger">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">REGISTAR EMPRESA</h1>
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="store.php" id="formulario" method="post">
-                    <div class="row mb-3">
-                        <label for="nit" class="col-sm-2 col-form-label text-end">NIT</label>
-                        <div class="col-sm-10">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="nit">NIT</label>
                             <input type="text" class="form-control" id="nit" name="nit" placeholder="Ingrese el NIT">
                             <div class="error" style="font-size: 12px; color: #dc3545"></div>
                         </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label for="nombre" class="col-sm-2 col-form-label text-end">Nombre</label>
-                        <div class="col-sm-10">
+                        <div class="form-group col-md-6">
+                            <label for="nombre">Nombre</label>
                             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre">
                             <div class="error" style="font-size: 12px; color: #dc3545"></div>
                         </div>
                     </div>
-                    <div class="row mb-3">
-                        <label for="telefono" class="col-sm-2 col-form-label text-end">Teléfono</label>
-                        <div class="col-sm-10">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="telefono">Teléfono</label>
                             <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el teléfono">
                             <div class="error" style="font-size: 12px; color: #dc3545"></div>
                         </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label for="email" class="col-sm-2 col-form-label text-end">Email</label>
-                        <div class="col-sm-10">
+                        <div class="form-group col-md-6">
+                            <label for="email">Email</label>
                             <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese el email">
+                            <div class="error" style="font-size: 12px; color: #dc3545"></div>
                         </div>
-                        <div class="error"></div>
                     </div>
-                    <div class="row mb-3">
-                        <label for="prefijo" class="col-sm-2 col-form-label text-end">Prefijo</label>
-                        <div class="col-sm-10">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="prefijo">Prefijo</label>
                             <select class="form-select" id="prefijo" name="prefijo">
                                 <option selected disabled>Seleccione un Prefijo</option>
                                 <option value="PRIVADO">PRIVADO</option>
                                 <option value="PUBLICO">PUBLICO</option>
                             </select>
-                            <div class="error"></div>
+                            <div class="error" style="font-size: 12px; color: #dc3545"></div>
                         </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label for="estado" class="col-sm-2 col-form-label text-end">Estado</label>
-                        <div class="col-sm-10">
+                        <div class="form-group col-md-6">
+                            <label for="estado">Estado</label>
                             <select class="form-select" id="estado" name="estado">
                                 <option selected disabled>Seleccione un estado</option>
                                 <option value="ACTIVO">ACTIVO</option>
                                 <option value="INACTIVO">INACTIVO</option>
                             </select>
-                            <div class="error"></div>
+                            <div class="error" style="font-size: 12px; color: #dc3545"></div>
                         </div>
                     </div>
-                    <div class="row mb-3">
-                        <div class="col-sm-10 offset-sm-2">
-                            <button type="submit" class="btn btn-danger"><i class="fa-regular fa-floppy-disk"></i> Registar</button>
-                        </div>
-                    </div>
+                    <button type="reset" class="btn btn-secondary"><i class="fa-solid fa-eraser"></i></button>
+                    <button type="submit" class="btn btn-danger">
+                        <i class="fa-regular fa-floppy-disk"></i> Registrar
+                    </button>
+
                 </form>
             </div>
         </div>

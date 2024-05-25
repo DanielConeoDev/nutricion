@@ -9,7 +9,6 @@ include("../../public/includ/head.php");
 include("../../public/includ/nav.php");
 include("../../public/includ/aside.php");
 ?>
-
 <!-- Content Header (Page header) -->
 <div class="content-header">
   <div class="container-fluid">
@@ -17,7 +16,7 @@ include("../../public/includ/aside.php");
       <div class="col-sm-6">
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-          <i class="fa-solid fa-plus"></i> Empresa
+        <i class="fa-solid fa-user-plus"></i></i> Usuario
         </button>
 
         <!-- Modal -->

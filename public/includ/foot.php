@@ -43,18 +43,9 @@
 </script>
 
 <script>
-  // Asegúrate de que el identificador del modal en el script coincida con el definido en el HTML
-  const myModal = document.getElementById('exampleModal');
-
-  // Agrega un listener para el evento 'shown.bs.modal' que se dispara cuando el modal se muestra
-  myModal.addEventListener('shown.bs.modal', function () {
-    // Busca un elemento dentro del modal para enfocar
-    const myInput = myModal.querySelector('input');
-    // Si se encuentra el elemento, enfócalo
-    if (myInput) {
-      myInput.focus();
-    }
-  });
+  $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
 </script>
 
 </body>
