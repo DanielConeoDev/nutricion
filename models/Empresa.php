@@ -25,12 +25,13 @@ class Empresa
         $query = "INSERT INTO " . $this->table_name . " (nit, nombre, estado, telefono, email, prefijo) VALUES (:nit, :nombre, :estado, :telefono, :email, :prefijo)";
         $stmt = $this->conn->prepare($query);
 
-        $this->nit = htmlspecialchars(strip_tags($this->nit));
-        $this->nombre = htmlspecialchars(strip_tags($this->nombre));
-        $this->estado = htmlspecialchars(strip_tags($this->estado));
-        $this->telefono = htmlspecialchars(strip_tags($this->telefono));
-        $this->email = htmlspecialchars(strip_tags($this->email));
-        $this->prefijo = htmlspecialchars(strip_tags($this->prefijo));
+        // Convertir a mayúsculas y sanitizar los valores
+        $this->nit = strtoupper(htmlspecialchars(strip_tags($this->nit)));
+        $this->nombre = strtoupper(htmlspecialchars(strip_tags($this->nombre)));
+        $this->estado = strtoupper(htmlspecialchars(strip_tags($this->estado)));
+        $this->telefono = strtoupper(htmlspecialchars(strip_tags($this->telefono)));
+        $this->email = strtoupper(htmlspecialchars(strip_tags($this->email)));
+        $this->prefijo = strtoupper(htmlspecialchars(strip_tags($this->prefijo)));
 
         $stmt->bindParam(':nit', $this->nit);
         $stmt->bindParam(':nombre', $this->nombre);
@@ -80,12 +81,13 @@ class Empresa
         $query = "UPDATE " . $this->table_name . " SET nombre = :nombre, estado = :estado, telefono = :telefono, email = :email, prefijo = :prefijo WHERE nit = :nit";
         $stmt = $this->conn->prepare($query);
 
-        $this->nombre = htmlspecialchars(strip_tags($this->nombre));
-        $this->estado = htmlspecialchars(strip_tags($this->estado));
-        $this->telefono = htmlspecialchars(strip_tags($this->telefono));
-        $this->email = htmlspecialchars(strip_tags($this->email));
-        $this->prefijo = htmlspecialchars(strip_tags($this->prefijo));
-        $this->nit = htmlspecialchars(strip_tags($this->nit));
+        // Convertir a mayúsculas y sanitizar los valores
+        $this->nombre = strtoupper(htmlspecialchars(strip_tags($this->nombre)));
+        $this->estado = strtoupper(htmlspecialchars(strip_tags($this->estado)));
+        $this->telefono = strtoupper(htmlspecialchars(strip_tags($this->telefono)));
+        $this->email = strtoupper(htmlspecialchars(strip_tags($this->email)));
+        $this->prefijo = strtoupper(htmlspecialchars(strip_tags($this->prefijo)));
+        $this->nit = strtoupper(htmlspecialchars(strip_tags($this->nit)));
 
         $stmt->bindParam(':nombre', $this->nombre);
         $stmt->bindParam(':estado', $this->estado);
@@ -117,3 +119,4 @@ class Empresa
         return false;
     }
 }
+?>

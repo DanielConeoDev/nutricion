@@ -6,7 +6,7 @@
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="store.php" method="post">
                     <div class="row mb-3">
                         <label for="nit" class="col-sm-2 col-form-label text-end">NIT</label>
                         <div class="col-sm-10">
@@ -17,17 +17,6 @@
                         <label for="nombre" class="col-sm-2 col-form-label text-end">Nombre</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label for="estado" class="col-sm-2 col-form-label text-end">Estado</label>
-                        <div class="col-sm-10">
-                            <select class="form-select" id="estado" name="estado">
-                                <option selected disabled>Seleccione un estado</option>
-                                <option value="Activo">Activo</option>
-                                <option value="Inactivo">Inactivo</option>
-                                <option value="En proceso">En proceso</option>
-                            </select>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -45,12 +34,26 @@
                     <div class="row mb-3">
                         <label for="prefijo" class="col-sm-2 col-form-label text-end">Prefijo</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="prefijo" name="prefijo" placeholder="Ingrese el prefijo">
+                            <select class="form-select" id="prefijo" name="prefijo">
+                                <option selected disabled>Seleccione un Prefijo</option>
+                                <option value="PRIVADO">PRIVADO</option>
+                                <option value="PUBLICO">PUBLICO</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="estado" class="col-sm-2 col-form-label text-end">Estado</label>
+                        <div class="col-sm-10">
+                            <select class="form-select" id="estado" name="estado">
+                                <option selected disabled>Seleccione un estado</option>
+                                <option value="ACTIVO">ACTIVO</option>
+                                <option value="INACTIVO">INACTIVO</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <div class="col-sm-10 offset-sm-2">
-                            <button type="submit" class="btn btn-primary">Guardar</button>
+                            <button type="submit" class="btn btn-danger"><i class="fa-regular fa-floppy-disk"></i> Registar</button>
                         </div>
                     </div>
                 </form>
