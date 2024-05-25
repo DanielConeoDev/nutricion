@@ -20,7 +20,15 @@ CREATE TABLE usuario (
     imagen VARCHAR(255),
     fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     fecha_ultima_modificacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    empresa_id INT
+    empresa_id VARCHAR(30),
 );
 
 ALTER TABLE usuarios AUTO_INCREMENT = 0000;
+
+-- Ahora, agregamos la relación en cascada
+ALTER TABLE usuario
+ADD CONSTRAINT fk_empresa_usuario
+FOREIGN KEY (empresa_id)
+REFERENCES empresa(nit)
+ON DELETE CASCADE
+ON UPDATE CASCADE;

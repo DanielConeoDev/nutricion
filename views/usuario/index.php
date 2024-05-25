@@ -1,7 +1,7 @@
 <?php
-require_once __DIR__ . '/../../controllers/EmpresaController.php';
-$controller = new EmpresaController();
-$empresa = $controller->index();
+require_once __DIR__ . '/../../controllers/UsuarioController.php';
+$controller = new UsuarioController();
+$usuario = $controller->index();
 ?>
 
 <?php
@@ -34,50 +34,7 @@ include("../../public/includ/aside.php");
       <div class="col-lg-12">
         <div class="card card-danger card-outline">
           <div class="card-body table-responsive">
-            <table id="example" class="table table-striped table-bordered table-hover table-sm " style="width:100%">
-              <thead>
-                <tr>
-                  <th>Nit</th>
-                  <th>Nombre</th>
-                  <th>Telefono</th>
-                  <th>Email</th>
-                  <th>Estado</th>
-                  <th>Prefijo</th>
-                  <th>Fecha creacion</th>
-                  <th>Fecha ultima modificacion</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php while ($row = $empresa->fetch(PDO::FETCH_ASSOC)) :
-                  $EmpresaEdiatr = $controller->read($row['nit']);
-                ?>
-                  <tr>
-                    <td><strong><?php echo htmlspecialchars($row['nit']); ?></strong></td>
-                    <td><?php echo htmlspecialchars($row['nombre']); ?></td>
-                    <td><?php echo htmlspecialchars($row['telefono']); ?></td>
-                    <td><?php echo htmlspecialchars($row['email']); ?></td>
-                    <td><?php echo htmlspecialchars($row['estado']); ?></td>
-                    <td><?php echo htmlspecialchars($row['prefijo']); ?></td>
-                    <td><?php echo htmlspecialchars($row['fecha_ultima_modificacion']); ?></td>
-                    <td><?php echo htmlspecialchars($row['fecha_creacion']); ?></td>
-                    <td>
-                      <div class="btn-group">
-                        <button class="btn btn-danger btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          <i class="fa-solid fa-ellipsis-vertical"></i>
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a data-toggle="modal" data-target="#EditarEmpresa<?php echo ($row['nit']); ?>" class="dropdown-item"><i class="fa-solid fa-pen-to-square"></i> Editar</a></li>
-                          <li><a class="dropdown-item" href="delete.php?nit=<?php echo $row['nit']; ?>"><i class="fa-solid fa-trash-can"></i> Eliminar</a></li>
-                        </ul>
-                      </div>
-                    </td>
-                  </tr>
-                  <!-- Modal -->
-                  <?php include('ModalEditarEmpresa.php') ?>
-                <?php endwhile; ?>
-              </tbody>
-            </table>
+           <?php include('TablaUsuario.php') ?>
           </div>
         </div><!-- /.card -->
       </div>
