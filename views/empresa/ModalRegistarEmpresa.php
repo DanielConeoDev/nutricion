@@ -6,23 +6,26 @@
                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="store.php" method="post">
+                <form action="store.php" id="formulario" method="post">
                     <div class="row mb-3">
                         <label for="nit" class="col-sm-2 col-form-label text-end">NIT</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="nit" name="nit" placeholder="Ingrese el NIT">
+                            <div class="error" style="font-size: 12px; color: #dc3545"></div>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="nombre" class="col-sm-2 col-form-label text-end">Nombre</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre">
+                            <div class="error" style="font-size: 12px; color: #dc3545"></div>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="telefono" class="col-sm-2 col-form-label text-end">Teléfono</label>
                         <div class="col-sm-10">
                             <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Ingrese el teléfono">
+                            <div class="error" style="font-size: 12px; color: #dc3545"></div>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -30,6 +33,7 @@
                         <div class="col-sm-10">
                             <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese el email">
                         </div>
+                        <div class="error"></div>
                     </div>
                     <div class="row mb-3">
                         <label for="prefijo" class="col-sm-2 col-form-label text-end">Prefijo</label>
@@ -39,6 +43,7 @@
                                 <option value="PRIVADO">PRIVADO</option>
                                 <option value="PUBLICO">PUBLICO</option>
                             </select>
+                            <div class="error"></div>
                         </div>
                     </div>
                     <div class="row mb-3">
@@ -49,6 +54,7 @@
                                 <option value="ACTIVO">ACTIVO</option>
                                 <option value="INACTIVO">INACTIVO</option>
                             </select>
+                            <div class="error"></div>
                         </div>
                     </div>
                     <div class="row mb-3">
