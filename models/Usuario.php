@@ -24,11 +24,10 @@ class Usuario
 
     public function create()
     {
-        $query = "INSERT INTO " . $this->table_name . " (id, nombre, email, password, rol, estado, imagen, empresa_id) VALUES (:id, :nombre, :email, :password, :rol, :estado, :imagen, :empresa_id)";
+        $query = "INSERT INTO " . $this->table_name . " (nombre, email, password, rol, estado, imagen, empresa_id) VALUES (:nombre, :email, :password, :rol, :estado, :imagen, :empresa_id)";
         $stmt = $this->conn->prepare($query);
 
-        // Convertir a mayúsculas y sanitizar los valores
-        $this->id = strtoupper(htmlspecialchars(strip_tags($this->id)));
+        
         $this->nombre = strtoupper(htmlspecialchars(strip_tags($this->nombre)));
         $this->email = strtoupper(htmlspecialchars(strip_tags($this->email)));
         $this->password = strtoupper(htmlspecialchars(strip_tags($this->password)));
@@ -38,7 +37,6 @@ class Usuario
         $this->empresa_id = strtoupper(htmlspecialchars(strip_tags($this->empresa_id)));
 
 
-        $stmt->bindParam(':id', $this->id);
         $stmt->bindParam(':nombre', $this->nombre);
         $stmt->bindParam(':email', $this->email);
         $stmt->bindParam(':password', $this->password);

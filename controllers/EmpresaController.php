@@ -42,12 +42,15 @@ class EmpresaController
         return false;
     }
 
-    public function read($nit)
+    public function readNit($nit)
     {
-        $this->empresa->nit = $nit;
-        $this->empresa->readOne();
+        $empresaData = $this->empresa->readOne($nit);
 
-        return $this->empresa;
+        if ($empresaData) {
+            return $empresaData; // Devuelve los datos de la empresa si se encontraron
+        } else {
+            return null; // Devuelve null si no se encontraron empresas
+        }
     }
 
     public function update($nit, $nombre, $estado, $telefono, $email, $prefijo)

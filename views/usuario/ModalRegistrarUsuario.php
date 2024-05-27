@@ -47,7 +47,8 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="imagen">Imagen</label>
-                            <input type="file" class="form-control" id="imagen" name="imagen">
+                            <!--<input type="file" class="form-control" id="imagen" name="imagen">-->
+                            <input type="text" class="form-control" id="imagen" name="imagen" placeholder="Url de imagen" required>
                             <div class="error" style="font-size: 12px; color: #dc3545"></div>
                         </div>
                     </div>

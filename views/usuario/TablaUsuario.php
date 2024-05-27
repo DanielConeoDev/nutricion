@@ -23,8 +23,21 @@
                 <td><?php echo htmlspecialchars($row['email']); ?></td>
                 <td><?php echo htmlspecialchars($row['rol']); ?></td>
                 <td><?php echo htmlspecialchars($row['estado']); ?></td>
-                <td><?php echo htmlspecialchars($row['empresa_id']); ?></td>
-                <td><?php echo htmlspecialchars($row['imagen']); ?></td>
+                <td>
+                    <?php
+                    $nit = $row['empresa_id'];
+                    $empresaData = $controllerEmpresa->readNit($nit);
+
+                    if (is_array($empresaData)) {
+                        echo htmlspecialchars($empresaData['nombre']);
+                    } else {
+                        echo "No se encontraron empresas.";
+                    }
+                    ?>
+                </td>
+                <td>
+                    <img src="<?php echo $row['imagen']; ?>" class="img-thumbnail" alt="<?php echo ($row['id']); ?>" width="60">
+                </td>
                 <td><?php echo htmlspecialchars($row['fecha_ultima_modificacion']); ?></td>
                 <td><?php echo htmlspecialchars($row['fecha_creacion']); ?></td>
                 <td>

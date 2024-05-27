@@ -17,8 +17,7 @@ class UsuarioController {
         return $result;
     }
 
-    public function create($id, $nombre, $email, $password, $rol, $estado, $imagen, $empresa_id) {
-        $this->usuario->id = $id;
+    public function create($nombre, $email, $password, $rol, $estado, $imagen, $empresa_id) {
         $this->usuario->nombre = $nombre;
         $this->usuario->email = $email;
         $this->usuario->password = $password;
