@@ -1,4 +1,11 @@
 <?php
+    session_start();
+    if(!isset($_SESSION['username'])){
+        header("Location: ../login/index.php");
+        exit();
+    }
+?>
+<?php
 require_once __DIR__ . '/../../controllers/UsuarioController.php';
 require_once __DIR__ . '/../../controllers/EmpresaController.php';
 

@@ -27,7 +27,7 @@ class Usuario
         $query = "INSERT INTO " . $this->table_name . " (nombre, email, password, rol, estado, imagen, empresa_id) VALUES (:nombre, :email, :password, :rol, :estado, :imagen, :empresa_id)";
         $stmt = $this->conn->prepare($query);
 
-        
+
         $this->nombre = strtoupper(htmlspecialchars(strip_tags($this->nombre)));
         $this->email = strtoupper(htmlspecialchars(strip_tags($this->email)));
         $this->password = strtoupper(htmlspecialchars(strip_tags($this->password)));
@@ -59,5 +59,15 @@ class Usuario
         $stmt->execute();
 
         return $stmt;
+    }
+
+    public function login($email, $password)
+    {
+        $query = "SELECT * FROM usuario WHERE email=:email AND password=:password";
+        $statement = $this->conn->prepare($query);
+        $statement->execute(array(':email' => $email, ':password' => $password));
+        $user = $statement->fetch(PDO::FETCH_ASSOC);
+
+        return $user;
     }
 }
