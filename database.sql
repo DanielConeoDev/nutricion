@@ -1,4 +1,4 @@
--- Crear la tabla empresa
+
 CREATE TABLE empresa (
     nit VARCHAR(20) PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
@@ -25,7 +25,6 @@ CREATE TABLE usuario (
 
 ALTER TABLE usuarios AUTO_INCREMENT = 0000;
 
--- Ahora, agregamos la relación en cascada
 ALTER TABLE usuario
 ADD CONSTRAINT fk_empresa_usuario
 FOREIGN KEY (empresa_id)

@@ -1,10 +1,13 @@
 <?php
 require_once __DIR__ . '/../../controllers/UsuarioController.php';
+require_once __DIR__ . '/../../controllers/EmpresaController.php';
+
 $controller = new UsuarioController();
 $usuario = $controller->index();
-?>
 
-<?php
+$controllerEmpresa = new EmpresaController();
+$empresa = $controllerEmpresa->indexSelectActive();
+
 include("../../public/includ/head.php");
 include("../../public/includ/nav.php");
 include("../../public/includ/aside.php");
@@ -20,7 +23,7 @@ include("../../public/includ/aside.php");
         </button>
 
         <!-- Modal -->
-        <?php include('ModalRegistarEmpresa.php') ?>
+        <?php include('ModalRegistrarUsuario.php') ?>
 
       </div><!-- /.col -->
     </div><!-- /.row -->

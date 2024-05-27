@@ -20,6 +20,12 @@ class EmpresaController
         return $result;
     }
 
+    public function indexSelectActive()
+    {
+        $result = $this->empresa->readSelectActive();
+        return $result;
+    }
+
     public function create($nit, $nombre, $estado, $telefono, $email, $prefijo)
     {
         $this->empresa->nit = $nit;

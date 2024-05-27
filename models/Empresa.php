@@ -56,6 +56,19 @@ class Empresa
         return $stmt;
     }
 
+    public function readSelectActive()
+    {
+        $query = "SELECT nit, nombre 
+              FROM " . $this->table_name . " 
+              WHERE estado = 'ACTIVO' 
+              ORDER BY fecha_creacion DESC";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+
+        return $stmt;
+    }
+
+
     public function readOne()
     {
         $query = "SELECT nit, nombre, estado, telefono, email, prefijo, fecha_creacion, fecha_ultima_modificacion FROM " . $this->table_name . " WHERE nit = ? LIMIT 0,1";
@@ -119,4 +132,3 @@ class Empresa
         return false;
     }
 }
-?>
