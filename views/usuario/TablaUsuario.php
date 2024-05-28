@@ -15,7 +15,7 @@
     </thead>
     <tbody>
         <?php while ($row = $usuario->fetch(PDO::FETCH_ASSOC)) :
-            //$EmpresaEdiatr = $controller->read($row['nit']);
+            $UsuarioEdiatr = $controller->read($row['id']);
         ?>
             <tr>
                 <td><strong><?php echo htmlspecialchars($row['id']); ?></strong></td>

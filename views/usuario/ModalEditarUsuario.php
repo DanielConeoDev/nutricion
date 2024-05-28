@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <form action="update.php" method="post">
-                    <input type="hidden" name="nit" value="<?php //echo htmlspecialchars($EmpresaEdiatr->nit); ?>" required>
+                    <input type="text" name="id" value="<?php echo htmlspecialchars($UsuarioEdiatr->id); ?>" required>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="nombre">Nombre</label>
