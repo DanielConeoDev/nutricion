@@ -46,14 +46,14 @@
                             <i class="fa-solid fa-ellipsis-vertical"></i>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a data-toggle="modal" data-target="#EditarEmpresa<?php echo ($row['id']); ?>" class="dropdown-item"><i class="fa-solid fa-pen-to-square"></i> Editar</a></li>
+                            <li><a data-toggle="modal" data-target="#EdiatrUsuario<?php echo ($row['id']); ?>" class="dropdown-item"><i class="fa-solid fa-pen-to-square"></i> Editar</a></li>
                             <li><a class="dropdown-item" href="delete.php?id=<?php echo $row['id']; ?>"><i class="fa-solid fa-trash-can"></i> Eliminar</a></li>
                         </ul>
                     </div>
                 </td>
             </tr>
             <!-- Modal -->
-            <?php include('ModalEditarEmpresa.php') ?>
+            <?php include('ModalEditarUsuario.php') ?>
         <?php endwhile; ?>
     </tbody>
 </table>
