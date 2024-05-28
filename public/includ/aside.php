@@ -9,14 +9,17 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-                <img src="https://img.freepik.com/vector-premium/icono-circulo-usuario-anonimo-ilustracion-vector-estilo-plano-sombra_520826-1931.jpg" class="img-circle elevation-2" alt="User Image">
-            </div>
-            <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
-            </div>
-        </div>
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex align-items-center">
+    <div class="image">
+        <img src="<?php echo $_SESSION['user']['imagen'] ?>" class="img-circle elevation-2" alt="User Image">
+    </div>
+    <div class="info">
+        <!-- Nombre en negrita con color blanco -->
+        <span style="font-weight: bold; color: white;"><?php echo $_SESSION['user']['nombre'] ?></span><br>
+        <!-- Rol con color blanco -->
+        <span style="color: white;"><?php echo $_SESSION['user']['rol'] ?></span>
+    </div>
+</div>
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">

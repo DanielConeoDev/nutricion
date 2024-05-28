@@ -15,7 +15,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="<?php echo BASE_URL; ?>views/login/logout.php">
                 <i class="fa-solid fa-right-from-bracket"></i>
             </a>
         </li>

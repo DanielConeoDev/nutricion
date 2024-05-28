@@ -6,6 +6,12 @@ $empresa = $controller->index();
 
 <?php
 include("../../public/includ/head.php");
+// Verificar si el rol en la sesión es "superadministrador"
+if ($_SESSION['user']['rol'] !== 'SUPERADMINISTARDOR') {
+  // Redireccionar a otra página
+  header('Location: ../Location/11.php');
+  exit; // Importante terminar el script después de la redirección
+}
 include("../../public/includ/nav.php");
 include("../../public/includ/aside.php");
 ?>
