@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header bg-danger">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">REGISTAR EMPRESA</h1>
-                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" id="cerrarFormulario" data-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="store.php" id="formulario" method="post">
@@ -35,7 +35,7 @@
                         <div class="form-group col-md-6">
                             <label for="prefijo">Prefijo</label>
                             <select class="form-select" id="prefijo" name="prefijo">
-                                <option selected disabled>Seleccione un Prefijo</option>
+                                <option selected disabled value="">Seleccione un Prefijo</option>
                                 <option value="PRIVADO">PRIVADO</option>
                                 <option value="PUBLICO">PUBLICO</option>
                             </select>
@@ -44,14 +44,14 @@
                         <div class="form-group col-md-6">
                             <label for="estado">Estado</label>
                             <select class="form-select" id="estado" name="estado">
-                                <option selected disabled>Seleccione un estado</option>
+                                <option selected disabled value="">Seleccione un estado</option>
                                 <option value="ACTIVO">ACTIVO</option>
                                 <option value="INACTIVO">INACTIVO</option>
                             </select>
                             <div class="error" style="font-size: 12px; color: #dc3545"></div>
                         </div>
                     </div>
-                    <button type="reset" class="btn btn-secondary"><i class="fa-solid fa-eraser"></i></button>
+                    <button type="reset" class="btn btn-secondary" id="btnLimpiar"><i class="fa-solid fa-eraser"></i>Limpiar</button>
                     <button type="submit" class="btn btn-danger">
                         <i class="fa-regular fa-floppy-disk"></i> Registrar
                     </button>

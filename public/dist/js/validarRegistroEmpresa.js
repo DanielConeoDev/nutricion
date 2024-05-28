@@ -1,4 +1,4 @@
-/*document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function(){
 
     const formulario = document.querySelector('#formulario');
     const nit = document.querySelector('#nit')
@@ -9,9 +9,11 @@
     const estado = document.querySelector('#estado');
 
     formulario.addEventListener('submit', e => {
-        e.preventDefault();
+        /* e.preventDefault(); */
 
         validarCampos();
+
+        //VALIDAR CAMPOS CON LIBRERIA sweetalert2
     });
 
     function setError(elemento, mensaje){
@@ -36,9 +38,11 @@
 
     function validarCampos(){
         const inputNit = nit.value.trim();
-        const inputnombre = nombre.value.trim();
+        const inputNombre = nombre.value.trim();
         const inputTelefono = telefono.value.trim();
         const inputEmail = email.value.trim();
+        const inputPrefijo = prefijo.value;
+        const inputEstado = estado.value;
 
         if(inputNit === ''){
             setError(nit, 'El Nit es requerido');
@@ -48,7 +52,7 @@
             nit.classList.remove('is-invalid');
         }
 
-        if(inputnombre === ''){
+        if(inputNombre === ''){
             setError(nombre, 'El nombre es requerido');
             nombre.classList.add('is-invalid');
         } else {
@@ -60,8 +64,87 @@
             setError(telefono, 'El telefono es requerido');
             telefono.classList.add('is-invalid');
         } else{
-            setSuccess(nombre);
+            setSuccess(telefono);
             telefono.classList.remove('is-invalid');
         }
+
+        if(inputEmail === ''){
+            setError(email, 'El email es requerido');
+            email.classList.add('is-invalid');
+        } else {
+            setSuccess(email);
+            email.classList.remove('is-invalid');
+        }
+
+        if(inputPrefijo === ''){
+            setError(prefijo, 'El prefijo es requerido');
+            prefijo.classList.add('is-invalid');
+        } else {
+            setSuccess(prefijo);
+            prefijo.classList.remove('is-invalid');
+        }
+
+        if(inputEstado === ''){
+            setError(estado, 'El estado es requerido');
+            estado.classList.add('is-invalid');
+        } else {
+            setSuccess(estado);
+            estado.classList.remove('is-invalid');
+        }
     }
-});*/
+
+    function remover(elemento){
+        elemento.addEventListener('input', function(){
+            elemento.classList.remove('is-invalid');
+            elemento.parentElement.querySelector('.error').innerText = '';
+        })
+    }
+
+    remover(nit);
+    remover(nombre);
+    remover(telefono);
+    remover(email);
+    remover(prefijo);
+    remover(estado);
+
+    //ELIMINAR ALERTAS AL MOMENTO DE CERRAR EL FORMULARIO
+    function eliminarAlertas(){
+
+        nit.classList.remove('is-invalid');
+        nombre.classList.remove('is-invalid');
+        telefono.classList.remove('is-invalid');
+        email.classList.remove('is-invalid');
+        prefijo.classList.remove('is-invalid');
+        estado.classList.remove('is-invalid');
+        
+
+        nit.parentElement.querySelector('.error').innerText = '';
+        nombre.parentElement.querySelector('.error').innerText = '';
+        telefono.parentElement.querySelector('.error').innerText = '';
+        email.parentElement.querySelector('.error').innerText = '';
+        prefijo.parentElement.querySelector('.error').innerText = '';
+        estado.parentElement.querySelector('.error').innerText = '';
+    }
+
+    
+    function limpiarDatos(){
+        inputNit.value = '';
+        inputNombre.value = '';
+        inputTelefono.value = '';
+        inputEmail.value = '';
+        inputPrefijo.value = '';
+        inputEstado.value = '';
+    }
+
+    function cerrarRegistro(){
+        eliminarAlertas();
+        limpiarDatos()
+    }
+
+    const btnCerrarBoton = document.querySelector('#cerrarFormulario');
+    const btnLimpiar = document.querySelector('#btnLimpiar');
+
+    btnLimpiar.addEventListener('click', limpiarDatos);
+    btnCerrarBoton.addEventListener('click', cerrarRegistro);
+
+});
