@@ -42,9 +42,17 @@ class EmpresaController
         return false;
     }
 
+    public function read($nit)
+    {
+        $this->empresa->nit = $nit;
+        $this->empresa->readOne();
+
+        return $this->empresa;
+    }
+
     public function readNit($nit)
     {
-        $empresaData = $this->empresa->readOne($nit);
+        $empresaData = $this->empresa->readOneNit($nit);
 
         if ($empresaData) {
             return $empresaData; // Devuelve los datos de la empresa si se encontraron

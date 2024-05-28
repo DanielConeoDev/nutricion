@@ -68,8 +68,28 @@ class Empresa
         return $stmt;
     }
 
+    public function readOne()
+    {
+        $query = "SELECT nit, nombre, estado, telefono, email, prefijo, fecha_creacion, fecha_ultima_modificacion FROM " . $this->table_name . " WHERE nit = ? LIMIT 0,1";
+        $stmt = $this->conn->prepare($query);
 
-    public function readOne($nit)
+        $stmt->bindParam(1, $this->nit);
+        $stmt->execute();
+
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        $this->nit = $row['nit'];
+        $this->nombre = $row['nombre'];
+        $this->estado = $row['estado'];
+        $this->telefono = $row['telefono'];
+        $this->email = $row['email'];
+        $this->prefijo = $row['prefijo'];
+        $this->fecha_creacion = $row['fecha_creacion'];
+        $this->fecha_ultima_modificacion = $row['fecha_ultima_modificacion'];
+    }
+
+
+    public function readOneNit($nit)
     {
         $query = "SELECT nit, nombre, estado, telefono, email, prefijo, fecha_creacion, fecha_ultima_modificacion FROM " . $this->table_name . " WHERE nit = ? LIMIT 0,1";
         $stmt = $this->conn->prepare($query);

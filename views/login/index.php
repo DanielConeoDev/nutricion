@@ -7,7 +7,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 // Verificar si el usuario ya está autenticado, si es así, redirigirlo a la página de bienvenida
-if(isset($_SESSION['user'])) {
+if (isset($_SESSION['user'])) {
     header("Location: ../../public/index.php");
     exit();
 }
