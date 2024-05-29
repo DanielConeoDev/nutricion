@@ -32,7 +32,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap5.css">
     <<!-- link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"> -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    
 </head>
 
 <body class="hold-transition sidebar-mini">

@@ -135,6 +135,27 @@ document.addEventListener('DOMContentLoaded', function(){
     remover(prefijo);
     remover(estado);
 
+    const btnCerrarBoton = document.querySelector('#cerrarFormulario');
+    const btnLimpiar = document.querySelector('#btnLimpiar');
+
+    btnLimpiar.addEventListener('click', limpiarDatos);
+    btnCerrarBoton.addEventListener('click', cerrarRegistro);
+
+
+    function limpiarDatos(){
+        inputNit.value = '';
+        inputNombre.value = '';
+        inputTelefono.value = '';
+        inputEmail.value = '';
+        inputPrefijo.value = '';
+        inputEstado.value = '';
+    }
+
+    function cerrarRegistro(){
+        eliminarAlertas();
+        limpiarDatos()
+    }
+
     //ELIMINAR ALERTAS AL MOMENTO DE CERRAR EL FORMULARIO
     function eliminarAlertas(){
 
@@ -153,27 +174,6 @@ document.addEventListener('DOMContentLoaded', function(){
         prefijo.parentElement.querySelector('.error').innerText = '';
         estado.parentElement.querySelector('.error').innerText = '';
     }
-
-    
-    function limpiarDatos(){
-        inputNit.value = '';
-        inputNombre.value = '';
-        inputTelefono.value = '';
-        inputEmail.value = '';
-        inputPrefijo.value = '';
-        inputEstado.value = '';
-    }
-
-    function cerrarRegistro(){
-        eliminarAlertas();
-        limpiarDatos()
-    }
-
-    const btnCerrarBoton = document.querySelector('#cerrarFormulario');
-    const btnLimpiar = document.querySelector('#btnLimpiar');
-
-    btnLimpiar.addEventListener('click', limpiarDatos);
-    btnCerrarBoton.addEventListener('click', cerrarRegistro);
 
 
 
