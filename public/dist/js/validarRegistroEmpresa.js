@@ -9,11 +9,30 @@ document.addEventListener('DOMContentLoaded', function(){
     const estado = document.querySelector('#estado');
 
     formulario.addEventListener('submit', e => {
-        /* e.preventDefault(); */
 
-        validarCampos();
-
-        //VALIDAR CAMPOS CON LIBRERIA sweetalert2
+        if (!validarCampos()) {
+            e.preventDefault(); // Evita el envío del formulario si hay campos inválidos
+        } else {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "Estás a punto de registrar una empresa",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Sí, enviar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                        'Registrado!',
+                        'Tu formulario ha sido enviado.',
+                        'success'
+                    ).then(() => {
+                        formulario.submit();
+                    });
+                }
+            });
+            e.preventDefault(); // Previene el envío inicial del formulario para mostrar la alerta
+        }
     });
 
     function setError(elemento, mensaje){
@@ -37,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     function validarCampos(){
+        let isValid = true;
         const inputNit = nit.value.trim();
         const inputNombre = nombre.value.trim();
         const inputTelefono = telefono.value.trim();
@@ -47,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function(){
         if(inputNit === ''){
             setError(nit, 'El Nit es requerido');
             nit.classList.add('is-invalid');
+            isValid = false;
         } else {
             setSuccess(nit);
             nit.classList.remove('is-invalid');
@@ -55,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function(){
         if(inputNombre === ''){
             setError(nombre, 'El nombre es requerido');
             nombre.classList.add('is-invalid');
+            isValid = false;
         } else {
             setSuccess(nombre);
             nombre.classList.remove('is-invalid');
@@ -63,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function(){
         if(inputTelefono === ''){
             setError(telefono, 'El telefono es requerido');
             telefono.classList.add('is-invalid');
+            isValid = false;
         } else{
             setSuccess(telefono);
             telefono.classList.remove('is-invalid');
@@ -71,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function(){
         if(inputEmail === ''){
             setError(email, 'El email es requerido');
             email.classList.add('is-invalid');
+            isValid = false;
         } else {
             setSuccess(email);
             email.classList.remove('is-invalid');
@@ -79,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function(){
         if(inputPrefijo === ''){
             setError(prefijo, 'El prefijo es requerido');
             prefijo.classList.add('is-invalid');
+            isValid = false;
         } else {
             setSuccess(prefijo);
             prefijo.classList.remove('is-invalid');
@@ -87,10 +112,13 @@ document.addEventListener('DOMContentLoaded', function(){
         if(inputEstado === ''){
             setError(estado, 'El estado es requerido');
             estado.classList.add('is-invalid');
+            isValid = false;
         } else {
             setSuccess(estado);
             estado.classList.remove('is-invalid');
         }
+
+        return isValid;
     }
 
     function remover(elemento){
@@ -146,5 +174,13 @@ document.addEventListener('DOMContentLoaded', function(){
 
     btnLimpiar.addEventListener('click', limpiarDatos);
     btnCerrarBoton.addEventListener('click', cerrarRegistro);
+
+
+
+    //Eliminar Registro de Empresa
+
+    /* const btnEliminarRegistro = document.querySelectorAll('.eliminar');
+
+    btnEliminarRegistro.addEventListener('click', limpiarDatos); */
 
 });
