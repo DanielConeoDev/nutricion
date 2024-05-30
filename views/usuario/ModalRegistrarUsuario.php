@@ -57,8 +57,8 @@
                             <label for="empresa">Empresa</label>
                             <select class="form-select" id="empresa" name="empresa" required>
                                 <option selected disabled>Seleccione un empresa</option>
-                                <?php while ($row = $empresa->fetch(PDO::FETCH_ASSOC)) : ?>
-                                    <option value="<?php echo $row['nit']; ?>"><?php echo htmlspecialchars ($row['nit']); ?> - <?php echo htmlspecialchars($row['nombre']); ?></option>
+                                <?php while ($RowEmpresa = $EmpresaSelect->fetch(PDO::FETCH_ASSOC)) : ?>
+                                    <option value="<?php echo $RowEmpresa['nit']; ?>"><?php echo htmlspecialchars ($RowEmpresa['nit']); ?> - <?php echo htmlspecialchars($RowEmpresa['nombre']); ?></option>
                                 <?php endwhile; ?>
                             </select>
                             <div class="error" style="font-size: 12px; color: #dc3545"></div>

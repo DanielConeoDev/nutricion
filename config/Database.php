@@ -2,7 +2,7 @@
 class Database
 {
     private $host = 'localhost';
-    private $db_name = 'panyc';
+    private $db_name = 'panyc2';
     private $username = 'root';
     private $password = '';
     public $conn;

@@ -11,19 +11,19 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="nombre">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre" required>
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese el nombre" value="<?php echo htmlspecialchars($UsuarioEdiatr->nombre); ?>" required>
                             <div class="error" style="font-size: 12px; color: #dc3545"></div>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese el email" required>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese el email" value="<?php echo htmlspecialchars($UsuarioEdiatr->email); ?>" required>
                             <div class="error" style="font-size: 12px; color: #dc3545"></div>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="password">Contraseña</label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese la contraseña" required>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese la contraseña" value="<?php echo htmlspecialchars($UsuarioEdiatr->password); ?>" required>
                             <div class="error" style="font-size: 12px; color: #dc3545"></div>
                         </div>
                         <div class="form-group col-md-6">
@@ -49,7 +49,7 @@
                         <div class="form-group col-md-6">
                             <label for="imagen">Imagen</label>
                             <!--<input type="file" class="form-control" id="imagen" name="imagen">-->
-                            <input type="text" class="form-control" id="imagen" name="imagen" placeholder="Url de imagen" required>
+                            <input type="text" class="form-control" id="imagen" name="imagen" placeholder="Url de imagen" value="<?php echo htmlspecialchars($UsuarioEdiatr->imagen); ?>" required>
                             <div class="error" style="font-size: 12px; color: #dc3545"></div>
                         </div>
                     </div>
@@ -57,8 +57,15 @@
                         <div class="form-group col-md-6">
                             <label for="empresa">Empresa</label>
                             <select class="form-select" id="empresa" name="empresa" required>
-                                <option selected disabled>Seleccione un empresa</option>
-                                
+                                <option selected disabled>Seleccione una empresa</option>
+                                <?php
+                                while ($RowEmpresa = $EmpresaSelect->fetch(PDO::FETCH_ASSOC)) {
+                                    $selected = ($RowEmpresa['nit'] == $nit) ? 'selected' : ''; // Determina si la opción debe estar seleccionada
+                                    echo '<option value="' . htmlspecialchars($RowEmpresa['nit']) . '" ' . $selected . '>';
+                                    echo htmlspecialchars($RowEmpresa['nit']) . ' - ' . htmlspecialchars($RowEmpresa['nombre']);
+                                    echo '</option>';
+                                }
+                                ?>
                             </select>
                             <div class="error" style="font-size: 12px; color: #dc3545"></div>
                         </div>

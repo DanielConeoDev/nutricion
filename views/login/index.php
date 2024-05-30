@@ -56,9 +56,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 </div>
                             </div>
                             <?php
-    if (isset($_GET['msg'])) {
-        $msg = $_GET['msg'];
-        echo "<script>
+                            if (isset($_GET['msg'])) {
+                                $msg = $_GET['msg'];
+                                echo "<script>
             document.addEventListener('DOMContentLoaded', function() {
                 let message = '';
                 let alertType = 'error';
@@ -74,8 +74,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 });
             });
             </script>";
-    }
-    ?>
+                            }
+                            ?>
                             <form action="" method="POST">
                                 <div class="row gy-3 gy-md-4 overflow-hidden">
                                     <div class="col-12">
