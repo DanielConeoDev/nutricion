@@ -37,6 +37,7 @@
 <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
 <script src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap5.js"></script>
 <script src="/public/dist/js/validarRegistroEmpresa.js"></script>
+<!-- <script src="/public/dist/js/validacionRegistroUsuario.js"></script> -->
 
 <script>
     new DataTable('#example');

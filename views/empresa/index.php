@@ -74,8 +74,8 @@ include("../../public/includ/aside.php");
                           <i class="fa-solid fa-ellipsis-vertical"></i>
                         </button>
                         <ul class="dropdown-menu">
-                          <li><a data-toggle="modal" data-target="#EditarEmpresa<?php echo ($row['nit']); ?>" class="dropdown-item"><i class="fa-solid fa-pen-to-square"></i> Editar</a></li>
-                          <li><a class="dropdown-item" href="delete.php?nit=<?php echo $row['nit']; ?>"><i class="fa-solid fa-trash-can"></i> Eliminar</a></li>
+                          <li><a data-toggle="modal" data-target="#EditarEmpresa<?php echo ($row['nit']); ?>" class="dropdown-item" id="editar"><i class="fa-solid fa-pen-to-square"></i> Editar</a></li>
+                          <li><a class="dropdown-item" id="eliminar" href="delete.php?nit=<?php echo $row['nit']; ?>"><i class="fa-solid fa-trash-can"></i> Eliminar</a></li>
                         </ul>
                       </div>
                     </td>
