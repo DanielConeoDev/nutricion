@@ -43,7 +43,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?php echo BASE_URL; ?>views/usuario/index.php" class="nav-link">
+                        <a href="<?php echo BASE_URL; ?>views/Fuentes/index.php" class="nav-link">
                             <i class="nav-icon  fa-solid fa-circle-info"></i>
                             <p>
                                 FUENTES
@@ -51,7 +51,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?php echo BASE_URL; ?>views/usuario/index.php" class="nav-link">
+                        <a href="<?php echo BASE_URL; ?>views/Grupos/index.php" class="nav-link">
                             <i class="nav-icon fa-solid fa-sitemap"></i>
                             <p>
                                 GRUPOS
@@ -68,7 +68,7 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/charts/chartjs.html" class="nav-link">
+                                <a href="<?php echo BASE_URL; ?>views/Componentes/index.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>COMPONENTES</p>
                                 </a>
