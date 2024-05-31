@@ -70,7 +70,6 @@ CREATE TABLE `componentes` (
   `nombre` VARCHAR(255) NOT NULL,
   `descripcion` TEXT,
   `id_tipo_analisis` INT,
-  `codigo_alimento` VARCHAR(50),
   `nit_empresa` VARCHAR(20),
   `id_usuario` INT,
   `fecha_modificacion` TIMESTAMP DEFAULT (CURRENT_TIMESTAMP),

@@ -35,7 +35,7 @@
                 ?>
                     <li class="nav-header">TAC</li>
                     <li class="nav-item">
-                        <a href="<?php echo BASE_URL; ?>views/usuario/index.php" class="nav-link">
+                        <a href="<?php echo BASE_URL; ?>views/Alimentos/index.php" class="nav-link">
                             <i class="nav-icon fa-solid fa-apple-whole"></i>
                             <p>
                                 ALIMENTOS
@@ -74,7 +74,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/charts/flot.html" class="nav-link">
+                                <a href="<?php echo BASE_URL; ?>views/SubComponentes/index.php" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>SUBCOMPONENTES</p>
                                 </a>
